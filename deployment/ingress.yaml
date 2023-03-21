@@ -1,0 +1,23 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: react-template-ingress
+  annotations:
+    # use the shared ingress-nginx
+    kubernetes.io/ingress.class: "nginx"
+    certmanager.k8s.io/issuer: "letsencrypt-prod"
+    certmanager.k8s.io/acme-challenge-type: http01
+    nginx.ingress.kubernetes.io/proxy-body-size: "50m"
+spec:
+  tls:
+  - hosts:
+    - react.testcoders.com
+    secretName: react-testcoders-com-tls
+  rules:
+    - host: react.testcoders.com
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: react-template-service
+              servicePort: 80

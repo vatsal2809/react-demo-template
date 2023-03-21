@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: react-template
+  labels:
+    app: react-template
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: react-template
+  template:
+    metadata:
+      labels:
+        app: react-template
+    spec:
+      containers:
+        - name: react-template
+          image: 923515777993.dkr.ecr.ca-central-1.amazonaws.com/react-template:latest
