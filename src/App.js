@@ -22,7 +22,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Learn React-1
         </a>
         {url && <p>Backend connected to url : {url}</p>}
       </header>
