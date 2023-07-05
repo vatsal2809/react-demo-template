@@ -22,7 +22,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React-6
+          Learn React-6-develop-branch
         </a>
         {url && <p>Backend connected to url : {url}</p>}
       </header>
